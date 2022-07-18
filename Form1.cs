@@ -85,11 +85,13 @@ namespace Mootube
             AutoUpdater.CheckForUpdateEvent += AutoUpdaterOnCheckForUpdateEvent;
             string version = fvi.FileVersion;
             AutoUpdater.DownloadPath = "update";
+            AutoUpdater.Start("https://raw.githubusercontent.com/ducanhmai521/Mootube/master/update.xml");
         }
         private void AutoUpdaterOnCheckForUpdateEvent(UpdateInfoEventArgs args)
         {
             if (args.IsUpdateAvailable)
             {
+                updatehub.latver = args.CurrentVersion;
                 updateavai uc = new updateavai();
                 addUserControl(uc);
             }

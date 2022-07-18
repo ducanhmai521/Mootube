@@ -27,6 +27,7 @@ namespace Mootube.User_Controls
             AutoUpdater.DownloadPath = "update";
             label3.Text = "Your current version: " + version;
         }
+        public static string latver;
         private void AutoUpdaterOnCheckForUpdateEvent(UpdateInfoEventArgs args)
         {
             if (args.IsUpdateAvailable)
@@ -47,7 +48,7 @@ namespace Mootube.User_Controls
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            AutoUpdater.Start("https://github.com/ducanhmai521/Mootube/blob/master/update.xml");
+            AutoUpdater.Start("https://raw.githubusercontent.com/ducanhmai521/Mootube/master/update.xml");
         }
     }
 }

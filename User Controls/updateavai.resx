@@ -117,4 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Updates make this app better by fixing bugs, adding more features,...
+Keep in mind that you CAN'T downgrade after update installation.
+However, you still CAN downgrade it by downloading old build on it's Github Repository (See About)</value>
+  </data>
 </root>
