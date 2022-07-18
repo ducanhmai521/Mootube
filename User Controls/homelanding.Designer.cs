@@ -289,6 +289,7 @@
             // 
             this.guna2Button3.BorderColor = System.Drawing.Color.Brown;
             this.guna2Button3.BorderRadius = 5;
+            this.guna2Button3.BorderThickness = 1;
             this.guna2Button3.CheckedState.Parent = this.guna2Button3;
             this.guna2Button3.CustomImages.Parent = this.guna2Button3;
             this.guna2Button3.FillColor = System.Drawing.Color.Salmon;

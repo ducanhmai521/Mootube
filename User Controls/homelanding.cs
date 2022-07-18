@@ -190,14 +190,13 @@ namespace Mootube.User_Controls
                     try
                     {
                         UpdateProgressBar(guna2ProgressBar1, 20, 40);
-                        var audioStreamInfo = streamManifest.GetAudioStreams().GetWithHighestBitrate();
-                        var videoStreamInfo = streamManifest.GetVideoStreams().First(s => s.VideoQuality.Label == "720p");
-                        var streamInfos = new IStreamInfo[] { audioStreamInfo, videoStreamInfo };
+                        var streamInfo = streamManifest.GetMuxedStreams().GetWithHighestVideoQuality();
                         string temppath = guna2TextBox2.Text + "\\" + @"DownloadTemp" + @".mp4";
                         string realpath = guna2TextBox2.Text + "\\" + title + @".mp4";
                         publicpath = realpath;
                         UpdateProgressBar(guna2ProgressBar1, 40, 70);
-                        await youtube.Videos.DownloadAsync(streamInfos, new ConversionRequestBuilder(temppath).Build());
+                        var stream = await youtube.Videos.Streams.GetAsync(streamInfo);
+                        await youtube.Videos.Streams.DownloadAsync(streamInfo, temppath);
                         try
                         {
                             System.IO.File.Move(temppath, realpath);
