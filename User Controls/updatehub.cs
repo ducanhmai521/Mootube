@@ -20,6 +20,14 @@ namespace Mootube.User_Controls
 
         private void updatehub_Load(object sender, EventArgs e)
         {
+            //theme
+            this.BackColor = Mootube.backcolor;
+            label1.ForeColor = Mootube.textcolor;
+            label2.ForeColor = Mootube.textcolor;
+            label3.ForeColor = Mootube.textcolor;
+            guna2Button2.FillColor = Mootube.buttonfillcolor;
+            guna2Button2.ForeColor = Mootube.buttonforecolor;
+
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
             System.Diagnostics.FileVersionInfo fvi = System.Diagnostics.FileVersionInfo.GetVersionInfo(assembly.Location);
             AutoUpdater.CheckForUpdateEvent += AutoUpdaterOnCheckForUpdateEvent;

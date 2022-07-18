@@ -37,10 +37,19 @@ namespace Mootube.User_Controls
                 Settings.Default["selectedtheme"] = "Pride";
             }
             Settings.Default.Save();
+            if(DialogResult.OK == MessageBox.Show(@"A restart is required to change the theme!", @"Info", MessageBoxButtons.OK))
+            {
+                Application.Restart();
+                Environment.Exit(0);
+            }
         }
-
         private void settings_Load(object sender, EventArgs e)
         {
+            this.BackColor = Mootube.backcolor;
+            label1.ForeColor = Mootube.textcolor;
+            label2.ForeColor = Mootube.textcolor;
+            guna2CircleButton1.FillColor = Mootube.buttonfillcolor;
+            guna2CircleButton1.ForeColor = Mootube.buttonforecolor;
             if (Settings.Default["selectedtheme"].ToString() == "Default")
             {
                 guna2RadioButton1.Checked = true;

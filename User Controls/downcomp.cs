@@ -20,6 +20,14 @@ namespace Mootube.User_Controls
 
         private void downcomp_Load(object sender, EventArgs e)
         {
+            this.BackColor = Mootube.backcolor;
+            label1.ForeColor = Mootube.textcolor;
+            label2.ForeColor = Mootube.textcolor;
+            label3.ForeColor = Mootube.textcolor;
+            label4.ForeColor = Mootube.textcolor;
+            guna2Button2.FillColor = Mootube.buttonfillcolor;
+            guna2Button2.ForeColor = Mootube.buttonforecolor;
+            guna2Panel1.BackColor = Mootube.buttonfillcolor;
             label3.Text = "File Location: " + homelanding.publicpath;
             long fileSizeibBytes = GetFileSize(homelanding.publicpath);
             long fileSizeibMbs = fileSizeibBytes / (1024 * 1024);

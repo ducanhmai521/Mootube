@@ -245,7 +245,6 @@
             this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(195)))), ((int)(((byte)(109)))));
             this.guna2TextBox2.FocusedState.Parent = this.guna2TextBox2;
             this.guna2TextBox2.ForeColor = System.Drawing.Color.ForestGreen;
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(195)))), ((int)(((byte)(109)))));
             this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
             this.guna2TextBox2.Location = new System.Drawing.Point(0, 0);
             this.guna2TextBox2.Name = "guna2TextBox2";
@@ -304,8 +303,7 @@
             // 
             // guna2ProgressBar1
             // 
-            this.guna2ProgressBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(255)))), ((int)(((byte)(209)))));
-            this.guna2ProgressBar1.BorderColor = System.Drawing.Color.LimeGreen;
+            this.guna2ProgressBar1.BorderColor = System.Drawing.Color.Empty;
             this.guna2ProgressBar1.BorderRadius = 6;
             this.guna2ProgressBar1.BorderThickness = 1;
             this.guna2ProgressBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(255)))), ((int)(((byte)(209)))));

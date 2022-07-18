@@ -76,5 +76,18 @@ namespace Mootube.User_Controls
             }
         }
 
+        private void homemain_Load(object sender, EventArgs e)
+        {
+            //theme
+            this.BackColor = Mootube.backcolor;
+            label1.ForeColor = Mootube.textcolor;
+            label2.ForeColor = Mootube.textcolor;
+            guna2Button4.FillColor = Mootube.buttonfillcolor;
+            guna2Button4.ForeColor = Mootube.buttonforecolor;
+            guna2TextBox1.FillColor = Mootube.backcolor;
+            guna2TextBox1.BorderColor = Mootube.buttonforecolor;
+            guna2TextBox1.ForeColor = Mootube.buttonforecolor;
+            guna2WinProgressIndicator1.ProgressColor = Mootube.buttonforecolor;
+        }
     }
 }

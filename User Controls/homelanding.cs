@@ -26,6 +26,32 @@ namespace Mootube.User_Controls
         }
         private async void homelanding_Load(object sender, EventArgs e)
         {
+            //theme
+            this.BackColor = Mootube.backcolor;
+            panel1.BackColor = Mootube.buttonfillcolor;
+            label1.ForeColor = Mootube.textcolor;
+            label2.ForeColor = Mootube.textcolor;
+            label3.ForeColor = Mootube.textcolor;
+            label4.ForeColor = Mootube.textcolor;
+            label5.ForeColor = Mootube.textcolor;
+            guna2Button1.FillColor = Mootube.buttonfillcolor;
+            guna2Button1.ForeColor = Mootube.buttonforecolor;
+            guna2Button2.FillColor = Mootube.buttonfillcolor;
+            guna2Button2.ForeColor = Mootube.buttonforecolor;
+            guna2RadioButton1.CheckedState.FillColor = Mootube.buttonforecolor;
+            guna2RadioButton1.CheckedState.InnerColor = Mootube.buttonfillcolor;
+            guna2RadioButton2.CheckedState.FillColor = Mootube.buttonforecolor;
+            guna2RadioButton2.CheckedState.InnerColor = Mootube.buttonfillcolor;
+            guna2ComboBox1.FillColor = Mootube.buttonfillcolor;
+            guna2ComboBox1.BorderColor = Mootube.buttonforecolor;
+            guna2ComboBox1.ForeColor = Mootube.buttonforecolor;
+            guna2TextBox2.FillColor = Mootube.buttonfillcolor;
+            guna2TextBox2.ForeColor = Mootube.buttonforecolor;
+            guna2TextBox2.BorderColor = Mootube.buttonforecolor;
+            guna2ProgressBar1.ProgressColor = Mootube.buttonfillcolor;
+            guna2ProgressBar1.ProgressColor2 = Mootube.buttonfillcolor;
+            guna2ProgressBar1.FillColor = Mootube.backcolor;
+
             guna2ProgressBar1.Visible = false;
             string username = Environment.UserName;
             System.IO.Directory.CreateDirectory(@"C:\Users\" + username + @"\Downloads\MooTube");
