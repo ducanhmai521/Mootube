@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Mootube.User_Controls;
 using AutoUpdaterDotNET;
+using Mootube.Properties;
 
 namespace Mootube
 {
@@ -77,9 +78,26 @@ namespace Mootube
                 addUserControl(uc);
             }
         }
-
+        public static Color backcolor = ColorTranslator.FromHtml("#EEFDEC");
+        public static Color textcolor = Color.ForestGreen;
+        public static Color buttonforecolor = Color.DarkGreen;
+        public static Color buttonfillcolor = Color.LightGreen;
         private void Mootube_Load(object sender, EventArgs e)
         {
+            if (Settings.Default["selectedtheme"].ToString() == "Blue")
+            {
+                backcolor = Color.LightCyan;
+                textcolor = Color.RoyalBlue;
+                buttonforecolor = Color.RoyalBlue;
+                buttonfillcolor = Color.LightSkyBlue;
+                //this
+                panel1.BackColor = Color.PowderBlue;
+                guna2Button1.CheckedState.FillColor = Color.LightSkyBlue;
+                guna2Button2.CheckedState.FillColor = Color.LightSkyBlue;
+                guna2Button3.CheckedState.FillColor = Color.LightSkyBlue;
+                guna2Button4.CheckedState.FillColor = Color.LightSkyBlue;
+            }
+            this.BackColor = backcolor;
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
             System.Diagnostics.FileVersionInfo fvi = System.Diagnostics.FileVersionInfo.GetVersionInfo(assembly.Location);
             AutoUpdater.CheckForUpdateEvent += AutoUpdaterOnCheckForUpdateEvent;

@@ -95,6 +95,8 @@ namespace Mootube.User_Controls
         }
         private async void guna2Button2_Click(object sender, EventArgs e)
         {
+            label1.Text = "Downloading...";
+            label5.Text = "Do not close this app until finished, speed depends on your video quality and computer speed.";
             var youtube = new YoutubeClient();
             UpdateProgressBar(guna2ProgressBar1, 0, 20);
             var streamManifest = await youtube.Videos.Streams.GetManifestAsync(homemain.ytlink);
@@ -110,54 +112,149 @@ namespace Mootube.User_Controls
                 publicpath = realpath;
                 UpdateProgressBar(guna2ProgressBar1, 40, 70);
                 await youtube.Videos.Streams.DownloadAsync(streamInfo, temppath);
-                UpdateProgressBar(guna2ProgressBar1, 70, 80);
-                System.IO.File.Move(temppath, realpath);
-                UpdateProgressBar(guna2ProgressBar1, 80, 90);
-                System.IO.File.Delete(temppath);
-                UpdateProgressBar(guna2ProgressBar1, 90, 100);
-                downcomp uc = new downcomp();
-                Controls.Add(uc);
-                uc.BringToFront();
+                try
+                {
+                    System.IO.File.Move(temppath, realpath);
+                    System.IO.File.Delete(temppath);
+                    UpdateProgressBar(guna2ProgressBar1, 70, 100);
+                    downcomp uc = new downcomp();
+                    Controls.Add(uc);
+                    uc.BringToFront();
+                }
+                catch
+                {
+                    MessageBox.Show(@"Unable to move temp file, maybe this video is already downloaded?", @"Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    System.IO.File.Delete(temppath);
+                    guna2ProgressBar1.Value = 0;
+                }
             } //mp3
-            else if (guna2RadioButton1.Checked == true && guna2ComboBox1.SelectedIndex==1)
+            else if (guna2RadioButton1.Checked == true && guna2ComboBox1.SelectedIndex==2)
             {
-                UpdateProgressBar(guna2ProgressBar1, 20, 40);
-                var streamInfo = streamManifest.GetMuxedStreams().GetWithHighestVideoQuality();
-                string temppath = guna2TextBox2.Text + "\\" + @"DownloadTemp" + @".mp4";
-                string realpath = guna2TextBox2.Text + "\\" + title + @".mp4";
-                publicpath = realpath;
-                UpdateProgressBar(guna2ProgressBar1, 40, 70);
-                await youtube.Videos.Streams.DownloadAsync(streamInfo, temppath);
-                UpdateProgressBar(guna2ProgressBar1, 70, 80);
-                System.IO.File.Move(temppath, realpath);
-                UpdateProgressBar(guna2ProgressBar1, 80, 90);
-                System.IO.File.Delete(temppath);
-                UpdateProgressBar(guna2ProgressBar1, 90, 100);
-                downcomp uc = new downcomp();
-                Controls.Add(uc);
-                uc.BringToFront();
-            }//mp4 medium 720p30
-            else if (guna2RadioButton1.Checked == true && guna2ComboBox1.SelectedIndex == 0)
+                try
+                {
+                    UpdateProgressBar(guna2ProgressBar1, 20, 40);
+                    var audioStreamInfo = streamManifest.GetAudioStreams().GetWithHighestBitrate();
+                    var videoStreamInfo = streamManifest.GetVideoStreams().First(s => s.VideoQuality.Label == "720p60");
+                    var streamInfos = new IStreamInfo[] { audioStreamInfo, videoStreamInfo };
+                    string temppath = guna2TextBox2.Text + "\\" + @"DownloadTemp" + @".mp4";
+                    string realpath = guna2TextBox2.Text + "\\" + title + @".mp4";
+                    publicpath = realpath;
+                    UpdateProgressBar(guna2ProgressBar1, 40, 70);
+                    await youtube.Videos.DownloadAsync(streamInfos, new ConversionRequestBuilder(temppath).Build());
+                    try
+                    {
+                        System.IO.File.Move(temppath, realpath);
+                        System.IO.File.Delete(temppath);
+                        UpdateProgressBar(guna2ProgressBar1, 70, 100);
+                        downcomp uc = new downcomp();
+                        Controls.Add(uc);
+                        uc.BringToFront();
+                    }
+                    catch
+                    {
+                        MessageBox.Show(@"Unable to move temp file, maybe this video is already downloaded?", @"Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        System.IO.File.Delete(temppath);
+                        guna2ProgressBar1.Value = 0;
+                    }
+                }
+                catch
+                {
+                    try
+                    {
+                        UpdateProgressBar(guna2ProgressBar1, 20, 40);
+                        var audioStreamInfo = streamManifest.GetAudioStreams().GetWithHighestBitrate();
+                        var videoStreamInfo = streamManifest.GetVideoStreams().First(s => s.VideoQuality.Label == "720p");
+                        var streamInfos = new IStreamInfo[] { audioStreamInfo, videoStreamInfo };
+                        string temppath = guna2TextBox2.Text + "\\" + @"DownloadTemp" + @".mp4";
+                        string realpath = guna2TextBox2.Text + "\\" + title + @".mp4";
+                        publicpath = realpath;
+                        UpdateProgressBar(guna2ProgressBar1, 40, 70);
+                        await youtube.Videos.DownloadAsync(streamInfos, new ConversionRequestBuilder(temppath).Build());
+                        try
+                        {
+                            System.IO.File.Move(temppath, realpath);
+                            System.IO.File.Delete(temppath);
+                            UpdateProgressBar(guna2ProgressBar1, 70, 100);
+                            downcomp uc = new downcomp();
+                            Controls.Add(uc);
+                            uc.BringToFront();
+                        }
+                        catch
+                        {
+                            MessageBox.Show(@"Unable to move temp file, maybe this video is already downloaded?", @"Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            System.IO.File.Delete(temppath);
+                            guna2ProgressBar1.Value = 0;
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show(@"This video is not available in 720p, please lower the quality to continue downloading.", @"Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }//mp4 medium 720p60/30
+            else if (guna2RadioButton1.Checked == true && guna2ComboBox1.SelectedIndex == 1)
             {
                 UpdateProgressBar(guna2ProgressBar1, 20, 40);
                 var audioStreamInfo = streamManifest.GetAudioStreams().GetWithHighestBitrate();
-                var videoStreamInfo = streamManifest.GetVideoStreams().First(s => s.VideoQuality.Label == "1080p");
-                var streamInfos = new IStreamInfo[] { audioStreamInfo, videoStreamInfo };
-                string temppath = guna2TextBox2.Text + "\\" + @"DownloadTemp" + @".mp4";
-                string realpath = guna2TextBox2.Text + "\\" + title + @".mp4";
-                publicpath = realpath;
-                UpdateProgressBar(guna2ProgressBar1, 40, 70);
-                await youtube.Videos.DownloadAsync(streamInfos, new ConversionRequestBuilder(temppath).Build());
-                UpdateProgressBar(guna2ProgressBar1, 70, 80);
-                System.IO.File.Move(temppath, realpath);
-                UpdateProgressBar(guna2ProgressBar1, 80, 90);
-                System.IO.File.Delete(temppath);
-                UpdateProgressBar(guna2ProgressBar1, 90, 100);
-                downcomp uc = new downcomp();
-                Controls.Add(uc);
-                uc.BringToFront();
-            }//mp4 high 1080p30
-            else if (guna2RadioButton1.Checked == true && guna2ComboBox1.SelectedIndex == 2)
+                try
+                {
+                    var videoStreamInfo = streamManifest.GetVideoStreams().First(s => s.VideoQuality.Label == "1080p60");
+                    var streamInfos = new IStreamInfo[] { audioStreamInfo, videoStreamInfo };
+                    string temppath = guna2TextBox2.Text + "\\" + @"DownloadTemp" + @".mp4";
+                    string realpath = guna2TextBox2.Text + "\\" + title + @".mp4";
+                    publicpath = realpath;
+                    UpdateProgressBar(guna2ProgressBar1, 40, 70);
+                    await youtube.Videos.DownloadAsync(streamInfos, new ConversionRequestBuilder(temppath).Build());
+                    try
+                    {
+                        System.IO.File.Move(temppath, realpath);
+                        System.IO.File.Delete(temppath);
+                        UpdateProgressBar(guna2ProgressBar1, 70, 100);
+                        downcomp uc = new downcomp();
+                        Controls.Add(uc);
+                        uc.BringToFront();
+                    }
+                    catch
+                    {
+                        MessageBox.Show(@"Unable to move temp file, maybe this video is already downloaded?", @"Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        System.IO.File.Delete(temppath);
+                        guna2ProgressBar1.Value = 0;
+                    }
+                }
+                catch
+                {
+                    try
+                    {
+                        var videoStreamInfo = streamManifest.GetVideoStreams().First(s => s.VideoQuality.Label == "1080p");
+                        var streamInfos = new IStreamInfo[] { audioStreamInfo, videoStreamInfo };
+                        string temppath = guna2TextBox2.Text + "\\" + @"DownloadTemp" + @".mp4";
+                        string realpath = guna2TextBox2.Text + "\\" + title + @".mp4";
+                        publicpath = realpath;
+                        UpdateProgressBar(guna2ProgressBar1, 40, 70);
+                        await youtube.Videos.DownloadAsync(streamInfos, new ConversionRequestBuilder(temppath).Build());
+                        try
+                        {
+                            System.IO.File.Move(temppath, realpath);
+                            System.IO.File.Delete(temppath);
+                            UpdateProgressBar(guna2ProgressBar1, 70, 100);
+                            downcomp uc = new downcomp();
+                            Controls.Add(uc);
+                            uc.BringToFront();
+                        }
+                        catch
+                        {
+                            MessageBox.Show(@"Unable to move temp file, maybe this video is already downloaded?", @"Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            System.IO.File.Delete(temppath);
+                            guna2ProgressBar1.Value = 0;
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show(@"This video is not available in 1080p, please lower the quality to continue downloading.", @"Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }//mp4 high 1080p60/30
+            else if (guna2RadioButton1.Checked == true && guna2ComboBox1.SelectedIndex == 3)
             {
                 UpdateProgressBar(guna2ProgressBar1, 20, 40);
                 string path = guna2TextBox2.Text + "\\";
@@ -169,6 +266,33 @@ namespace Mootube.User_Controls
                 Controls.Add(uc);
                 uc.BringToFront();
             }//mp4 low 480p30 
+            else if (guna2RadioButton1.Checked == true && guna2ComboBox1.SelectedIndex == 0)
+            {
+                string temppath = guna2TextBox2.Text + "\\" + @"DownloadTemp" + @".mp4";
+                string realpath = guna2TextBox2.Text + "\\" + title + @".mp4";
+                publicpath = realpath;
+                UpdateProgressBar(guna2ProgressBar1, 40, 70);
+                await youtube.Videos.DownloadAsync(homemain.ytlink, temppath, o => o
+                    .SetContainer("mp4") // override format
+                    .SetPreset(ConversionPreset.UltraFast) // change preset
+                );
+                try
+                {
+                    System.IO.File.Move(temppath, realpath);
+                    System.IO.File.Delete(temppath);
+                    UpdateProgressBar(guna2ProgressBar1, 70, 100);
+                    downcomp uc = new downcomp();
+                    Controls.Add(uc);
+                    uc.BringToFront();
+                }
+                catch
+                {
+                    MessageBox.Show(@"Unable to move temp file, maybe this video is already downloaded?", @"Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    System.IO.File.Delete(temppath);
+                    guna2ProgressBar1.Value = 0;
+                }
+            } //max quality
+            label5.Text = " ";
         }
         void SaveVideoToDisk(string link, string folpath)
         {

@@ -67,5 +67,10 @@ namespace Mootube.User_Controls
             Controls.Add(userControl);
             userControl.BringToFront();
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer", "https://github.com/ducanhmai521/Mootube/releases");
+        }
     }
 }

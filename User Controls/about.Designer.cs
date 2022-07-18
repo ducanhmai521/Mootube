@@ -79,6 +79,7 @@
             this.Controls.Add(this.label1);
             this.Name = "about";
             this.Size = new System.Drawing.Size(668, 426);
+            this.Load += new System.EventHandler(this.about_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
