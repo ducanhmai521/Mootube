@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Mootube.User_Controls;
+using AutoUpdaterDotNET;
 
 namespace Mootube
 {
@@ -74,8 +75,30 @@ namespace Mootube
             {
                 homemain uc = new homemain();
                 addUserControl(uc);
-                //label1.Text = "Wanna know more 'bout me huh?";
             }
+        }
+
+        private void Mootube_Load(object sender, EventArgs e)
+        {
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            System.Diagnostics.FileVersionInfo fvi = System.Diagnostics.FileVersionInfo.GetVersionInfo(assembly.Location);
+            AutoUpdater.CheckForUpdateEvent += AutoUpdaterOnCheckForUpdateEvent;
+            string version = fvi.FileVersion;
+            AutoUpdater.DownloadPath = "update";
+        }
+        private void AutoUpdaterOnCheckForUpdateEvent(UpdateInfoEventArgs args)
+        {
+            if (args.IsUpdateAvailable)
+            {
+                updateavai uc = new updateavai();
+                addUserControl(uc);
+            }
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            updatehub uc = new updatehub();
+            addUserControl(uc);
         }
     }
 }
