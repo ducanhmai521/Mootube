@@ -73,7 +73,7 @@ namespace Mootube
         {
             if (guna2Button3.Checked == true)
             {
-                homemain uc = new homemain();
+                about uc = new about();
                 addUserControl(uc);
             }
         }
@@ -92,6 +92,7 @@ namespace Mootube
             if (args.IsUpdateAvailable)
             {
                 updatehub.latver = args.CurrentVersion;
+                guna2Button4.Checked = true;
                 updateavai uc = new updateavai();
                 addUserControl(uc);
             }

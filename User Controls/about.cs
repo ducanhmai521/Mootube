@@ -16,5 +16,10 @@ namespace Mootube.User_Controls
         {
             InitializeComponent();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer", "https://github.com/ducanhmai521/Mootube");
+        }
     }
 }
