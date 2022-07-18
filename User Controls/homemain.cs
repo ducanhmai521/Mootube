@@ -84,6 +84,7 @@ namespace Mootube.User_Controls
             label2.ForeColor = Mootube.textcolor;
             guna2Button4.FillColor = Mootube.buttonfillcolor;
             guna2Button4.ForeColor = Mootube.buttonforecolor;
+            guna2Button4.BorderColor = Mootube.buttonforecolor;
             guna2TextBox1.FillColor = Mootube.backcolor;
             guna2TextBox1.BorderColor = Mootube.buttonforecolor;
             guna2TextBox1.ForeColor = Mootube.buttonforecolor;

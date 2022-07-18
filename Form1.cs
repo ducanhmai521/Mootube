@@ -26,26 +26,6 @@ namespace Mootube
             panelContainer.Controls.Add(userControl);
             userControl.BringToFront();
         }
-        //private void Form1_MouseDown(object sender, MouseEventArgs e)
-        //{
-        //    offset.X = e.X;
-        //    offset.Y = e.Y;
-        //    mouseDown = true;
-        //}
-
-        //private void Form1_MouseMove(object sender, MouseEventArgs e)
-        //{
-        //    if(mouseDown==true)
-        //    {
-        //        Point currentScreenPos = PointToScreen(e.Location);
-        //        Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
-        //    }
-        //}
-
-        //private void Form1_MouseUp(object sender, MouseEventArgs e)
-        //{
-        //    mouseDown = false;
-        //}
         private void Form1_Shown(object sender, EventArgs e)
         {
             homemain uc = new homemain();
@@ -81,7 +61,7 @@ namespace Mootube
         public static Color backcolor = ColorTranslator.FromHtml("#EEFDEC");
         public static Color textcolor = Color.ForestGreen;
         public static Color buttonforecolor = Color.DarkGreen;
-        public static Color buttonfillcolor = Color.LightGreen;
+        public static Color buttonfillcolor = ColorTranslator.FromHtml("#CAFFC6");
         private void Mootube_Load(object sender, EventArgs e)
         {
             if (Settings.Default["selectedtheme"].ToString() == "Blue")
@@ -89,13 +69,26 @@ namespace Mootube
                 backcolor = Color.LightCyan;
                 textcolor = Color.RoyalBlue;
                 buttonforecolor = Color.RoyalBlue;
-                buttonfillcolor = Color.LightSkyBlue;
+                buttonfillcolor = Color.LightBlue;
                 //this
                 panel1.BackColor = Color.PowderBlue;
                 guna2Button1.CheckedState.FillColor = Color.LightSkyBlue;
                 guna2Button2.CheckedState.FillColor = Color.LightSkyBlue;
                 guna2Button3.CheckedState.FillColor = Color.LightSkyBlue;
                 guna2Button4.CheckedState.FillColor = Color.LightSkyBlue;
+            }
+            if (Settings.Default["selectedtheme"].ToString() == "Pride")
+            {
+                backcolor = Color.Cornsilk;
+                textcolor = Color.ForestGreen;
+                buttonforecolor = Color.ForestGreen;
+                buttonfillcolor = Color.LemonChiffon;
+                //this
+                panel1.BackColor = ColorTranslator.FromHtml("#FFDCD2");
+                guna2Button1.CheckedState.FillColor = Color.LightGreen;
+                guna2Button2.CheckedState.FillColor = Color.Khaki;
+                guna2Button3.CheckedState.FillColor = Color.LightSkyBlue;
+                guna2Button4.CheckedState.FillColor = Color.Plum;
             }
             this.BackColor = backcolor;
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();

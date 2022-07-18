@@ -36,8 +36,10 @@ namespace Mootube.User_Controls
             label5.ForeColor = Mootube.textcolor;
             guna2Button1.FillColor = Mootube.buttonfillcolor;
             guna2Button1.ForeColor = Mootube.buttonforecolor;
+            guna2Button1.BorderColor = Mootube.buttonforecolor;
             guna2Button2.FillColor = Mootube.buttonfillcolor;
             guna2Button2.ForeColor = Mootube.buttonforecolor;
+            guna2Button2.BorderColor = Mootube.buttonforecolor;
             guna2RadioButton1.CheckedState.FillColor = Mootube.buttonforecolor;
             guna2RadioButton1.CheckedState.InnerColor = Mootube.buttonfillcolor;
             guna2RadioButton2.CheckedState.FillColor = Mootube.buttonforecolor;

@@ -136,6 +136,7 @@
             // 
             // guna2CircleButton1
             // 
+            this.guna2CircleButton1.BorderThickness = 1;
             this.guna2CircleButton1.CheckedState.Parent = this.guna2CircleButton1;
             this.guna2CircleButton1.CustomImages.Parent = this.guna2CircleButton1;
             this.guna2CircleButton1.FillColor = System.Drawing.Color.LightGreen;

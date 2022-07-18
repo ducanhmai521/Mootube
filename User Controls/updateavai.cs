@@ -29,8 +29,10 @@ namespace Mootube.User_Controls
             label4.ForeColor = Mootube.textcolor;
             guna2Button2.FillColor = Mootube.buttonfillcolor;
             guna2Button2.ForeColor = Mootube.buttonforecolor;
+            guna2Button2.BorderColor = Mootube.buttonforecolor;
             guna2Button1.FillColor = Mootube.buttonfillcolor;
             guna2Button1.ForeColor = Mootube.buttonforecolor;
+            guna2Button1.BorderColor = Mootube.buttonforecolor;
 
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
             System.Diagnostics.FileVersionInfo fvi = System.Diagnostics.FileVersionInfo.GetVersionInfo(assembly.Location);

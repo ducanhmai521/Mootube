@@ -50,6 +50,7 @@
             // 
             this.guna2Button2.BorderColor = System.Drawing.Color.ForestGreen;
             this.guna2Button2.BorderRadius = 5;
+            this.guna2Button2.BorderThickness = 1;
             this.guna2Button2.CheckedState.Parent = this.guna2Button2;
             this.guna2Button2.CustomImages.Parent = this.guna2Button2;
             this.guna2Button2.FillColor = System.Drawing.Color.LightGreen;

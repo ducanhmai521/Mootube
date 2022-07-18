@@ -75,11 +75,12 @@
             // guna2Button4
             // 
             this.guna2Button4.BorderRadius = 7;
+            this.guna2Button4.BorderThickness = 1;
             this.guna2Button4.CheckedState.FillColor = System.Drawing.Color.LightGreen;
             this.guna2Button4.CheckedState.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.guna2Button4.CheckedState.Parent = this.guna2Button4;
             this.guna2Button4.CustomImages.Parent = this.guna2Button4;
-            this.guna2Button4.FillColor = System.Drawing.Color.LightGreen;
+            this.guna2Button4.FillColor = System.Drawing.Color.PaleGreen;
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button4.ForeColor = System.Drawing.Color.DarkGreen;
             this.guna2Button4.HoverState.Parent = this.guna2Button4;

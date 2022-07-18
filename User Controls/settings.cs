@@ -50,6 +50,7 @@ namespace Mootube.User_Controls
             label2.ForeColor = Mootube.textcolor;
             guna2CircleButton1.FillColor = Mootube.buttonfillcolor;
             guna2CircleButton1.ForeColor = Mootube.buttonforecolor;
+            guna2CircleButton1.BorderColor = Mootube.buttonforecolor;
             if (Settings.Default["selectedtheme"].ToString() == "Default")
             {
                 guna2RadioButton1.Checked = true;
