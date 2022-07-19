@@ -40,12 +40,16 @@ namespace Mootube.User_Controls
             {
                 Settings.Default["selectedtheme"] = "Dark";
             }
-            else if(guna2RadioButton5.Checked == true)
+            if(uponstart.Checked == false)
+            {
+                Settings.Default["checkforuponstart"] = false;
+            }
+            else
             {
                 Settings.Default["checkforuponstart"] = true;
             }    
             Settings.Default.Save();
-            if(DialogResult.OK == MessageBox.Show(@"A restart is required to change the theme!", @"Info", MessageBoxButtons.OK))
+            if(DialogResult.OK == MessageBox.Show(@"A restart is required!", @"Info", MessageBoxButtons.OK))
             {
                 Application.Restart();
                 Environment.Exit(0);
@@ -61,6 +65,7 @@ namespace Mootube.User_Controls
             this.BackColor = Mootube.backcolor;
             label1.ForeColor = Mootube.textcolor;
             label2.ForeColor = Mootube.textcolor;
+            label3.ForeColor = Mootube.textcolor;
             guna2CircleButton1.FillColor = Mootube.buttonfillcolor;
             guna2CircleButton1.ForeColor = Mootube.buttonforecolor;
             guna2CircleButton1.BorderColor = Mootube.buttonforecolor;
@@ -68,7 +73,7 @@ namespace Mootube.User_Controls
             guna2RadioButton2.ForeColor = Mootube.textcolor;
             guna2RadioButton3.ForeColor = Mootube.textcolor;
             guna2RadioButton4.ForeColor = Mootube.textcolor;
-            guna2RadioButton5.ForeColor = Mootube.textcolor;
+            uponstart.ForeColor = Mootube.textcolor;
             if (Settings.Default["selectedtheme"].ToString() == "Default")
             {
                 guna2RadioButton1.Checked = true;
@@ -87,7 +92,7 @@ namespace Mootube.User_Controls
             }
             if (Settings.Default["checkforuponstart"].Equals(true))
             {
-                guna2RadioButton5.Checked = true;
+                uponstart.Checked = true;
             }    
         }
     }

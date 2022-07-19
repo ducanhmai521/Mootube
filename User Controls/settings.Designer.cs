@@ -37,7 +37,7 @@
             this.guna2RadioButton4 = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.guna2RadioButton5 = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.uponstart = new Guna.UI2.WinForms.Guna2CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -189,33 +189,30 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Updater";
             // 
-            // guna2RadioButton5
+            // uponstart
             // 
-            this.guna2RadioButton5.Animated = true;
-            this.guna2RadioButton5.AutoSize = true;
-            this.guna2RadioButton5.CheckedState.BorderColor = System.Drawing.Color.Black;
-            this.guna2RadioButton5.CheckedState.BorderThickness = 0;
-            this.guna2RadioButton5.CheckedState.FillColor = System.Drawing.Color.Black;
-            this.guna2RadioButton5.CheckedState.InnerColor = System.Drawing.Color.Gray;
-            this.guna2RadioButton5.CheckedState.InnerOffset = -4;
-            this.guna2RadioButton5.Location = new System.Drawing.Point(23, 191);
-            this.guna2RadioButton5.Name = "guna2RadioButton5";
-            this.guna2RadioButton5.Size = new System.Drawing.Size(157, 17);
-            this.guna2RadioButton5.TabIndex = 18;
-            this.guna2RadioButton5.TabStop = true;
-            this.guna2RadioButton5.Text = "Check for update on startup";
-            this.guna2RadioButton5.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2RadioButton5.UncheckedState.BorderThickness = 2;
-            this.guna2RadioButton5.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton5.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton5.UseVisualStyleBackColor = true;
+            this.uponstart.AutoSize = true;
+            this.uponstart.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.uponstart.CheckedState.BorderRadius = 2;
+            this.uponstart.CheckedState.BorderThickness = 0;
+            this.uponstart.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.uponstart.Location = new System.Drawing.Point(23, 191);
+            this.uponstart.Name = "uponstart";
+            this.uponstart.Size = new System.Drawing.Size(158, 17);
+            this.uponstart.TabIndex = 20;
+            this.uponstart.Text = "Check for update on startup";
+            this.uponstart.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.uponstart.UncheckedState.BorderRadius = 2;
+            this.uponstart.UncheckedState.BorderThickness = 0;
+            this.uponstart.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.uponstart.UseVisualStyleBackColor = true;
             // 
             // settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(253)))), ((int)(((byte)(236)))));
-            this.Controls.Add(this.guna2RadioButton5);
+            this.Controls.Add(this.uponstart);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.guna2CircleButton1);
             this.Controls.Add(this.panel1);
@@ -242,6 +239,6 @@
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private Guna.UI2.WinForms.Guna2RadioButton guna2RadioButton4;
         private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2RadioButton guna2RadioButton5;
+        private Guna.UI2.WinForms.Guna2CheckBox uponstart;
     }
 }
