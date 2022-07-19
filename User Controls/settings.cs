@@ -32,10 +32,18 @@ namespace Mootube.User_Controls
             {
                 Settings.Default["selectedtheme"] = "Blue";
             }
-            else
+            else if(guna2RadioButton3.Checked == true)
             {
                 Settings.Default["selectedtheme"] = "Pride";
             }
+            else if(guna2RadioButton4.Checked == true)
+            {
+                Settings.Default["selectedtheme"] = "Dark";
+            }
+            else if(guna2RadioButton5.Checked == true)
+            {
+                Settings.Default["checkforuponstart"] = true;
+            }    
             Settings.Default.Save();
             if(DialogResult.OK == MessageBox.Show(@"A restart is required to change the theme!", @"Info", MessageBoxButtons.OK))
             {
@@ -45,12 +53,22 @@ namespace Mootube.User_Controls
         }
         private void settings_Load(object sender, EventArgs e)
         {
+            guna2RadioButton3.Visible = false;
+            if (Settings.Default["isge"].Equals(true))
+            {
+                guna2RadioButton3.Visible = true;
+            }    
             this.BackColor = Mootube.backcolor;
             label1.ForeColor = Mootube.textcolor;
             label2.ForeColor = Mootube.textcolor;
             guna2CircleButton1.FillColor = Mootube.buttonfillcolor;
             guna2CircleButton1.ForeColor = Mootube.buttonforecolor;
             guna2CircleButton1.BorderColor = Mootube.buttonforecolor;
+            guna2RadioButton1.ForeColor = Mootube.textcolor;
+            guna2RadioButton2.ForeColor = Mootube.textcolor;
+            guna2RadioButton3.ForeColor = Mootube.textcolor;
+            guna2RadioButton4.ForeColor = Mootube.textcolor;
+            guna2RadioButton5.ForeColor = Mootube.textcolor;
             if (Settings.Default["selectedtheme"].ToString() == "Default")
             {
                 guna2RadioButton1.Checked = true;
@@ -59,10 +77,18 @@ namespace Mootube.User_Controls
             {
                 guna2RadioButton2.Checked = true;
             }
+            else if(Settings.Default["selectedtheme"].ToString() == "Dark")
+            {
+                guna2RadioButton4.Checked = true;
+            }    
             else
             {
                 guna2RadioButton3.Checked = true;
             }
+            if (Settings.Default["checkforuponstart"].Equals(true))
+            {
+                guna2RadioButton5.Checked = true;
+            }    
         }
     }
 }

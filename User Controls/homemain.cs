@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using YoutubeExplode;
+using Mootube.Properties;
 
 namespace Mootube.User_Controls
 {
@@ -32,6 +33,10 @@ namespace Mootube.User_Controls
              try
              {
                 label1.Text = "Checking entered link...";
+                if (guna2TextBox1.Text == "lemme use your pride theme")
+                {
+                    Settings.Default["isge"] = true;
+                }    
                 guna2WinProgressIndicator1.Show();
                 ytlink = guna2TextBox1.Text;
                 var youtube = new YoutubeClient();

@@ -34,5 +34,29 @@ namespace Mootube.Properties {
                 this["selectedtheme"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool isge {
+            get {
+                return ((bool)(this["isge"]));
+            }
+            set {
+                this["isge"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool checkforuponstart {
+            get {
+                return ((bool)(this["checkforuponstart"]));
+            }
+            set {
+                this["checkforuponstart"] = value;
+            }
+        }
     }
 }

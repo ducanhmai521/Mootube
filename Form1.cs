@@ -77,7 +77,7 @@ namespace Mootube
                 guna2Button3.CheckedState.FillColor = Color.LightSkyBlue;
                 guna2Button4.CheckedState.FillColor = Color.LightSkyBlue;
             }
-            if (Settings.Default["selectedtheme"].ToString() == "Pride")
+            else if (Settings.Default["selectedtheme"].ToString() == "Pride")
             {
                 backcolor = Color.Cornsilk;
                 textcolor = Color.ForestGreen;
@@ -90,13 +90,33 @@ namespace Mootube
                 guna2Button3.CheckedState.FillColor = Color.LightSkyBlue;
                 guna2Button4.CheckedState.FillColor = Color.Plum;
             }
+            else if (Settings.Default["selectedtheme"].ToString() == "Dark")
+            {
+                backcolor = Color.Black;
+                textcolor = Color.White;
+                buttonforecolor = Color.White;
+                buttonfillcolor = Color.DimGray;
+                //this
+                panel1.BackColor = ColorTranslator.FromHtml("#2a2a29");
+                guna2Button1.CheckedState.FillColor = Color.Gray;
+                guna2Button1.ForeColor = Color.White;
+                guna2Button2.CheckedState.FillColor = Color.Gray;
+                guna2Button2.ForeColor = Color.White;
+                guna2Button3.CheckedState.FillColor = Color.Gray;
+                guna2Button3.ForeColor = Color.White;
+                guna2Button4.CheckedState.FillColor = Color.Gray;
+                guna2Button4.ForeColor = Color.White;
+            }
             this.BackColor = backcolor;
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
             System.Diagnostics.FileVersionInfo fvi = System.Diagnostics.FileVersionInfo.GetVersionInfo(assembly.Location);
             AutoUpdater.CheckForUpdateEvent += AutoUpdaterOnCheckForUpdateEvent;
             string version = fvi.FileVersion;
             AutoUpdater.DownloadPath = "update";
-            AutoUpdater.Start("https://raw.githubusercontent.com/ducanhmai521/Mootube/master/update.xml");
+            if (Settings.Default["checkforuponstart"].Equals(true))
+            {
+                AutoUpdater.Start("https://raw.githubusercontent.com/ducanhmai521/Mootube/master/update.xml");
+            }    
         }
         private void AutoUpdaterOnCheckForUpdateEvent(UpdateInfoEventArgs args)
         {

@@ -27,6 +27,8 @@ namespace Mootube.User_Controls
         private async void homelanding_Load(object sender, EventArgs e)
         {
             //theme
+            guna2RadioButton1.ForeColor = Mootube.textcolor;
+            guna2RadioButton2.ForeColor = Mootube.textcolor;
             this.BackColor = Mootube.backcolor;
             panel1.BackColor = Mootube.buttonfillcolor;
             label1.ForeColor = Mootube.textcolor;
