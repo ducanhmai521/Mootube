@@ -133,6 +133,16 @@ namespace Mootube.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mootube {
+            get {
+                object obj = ResourceManager.GetObject("mootube", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SeekPng_com_loading_png_189583 {
             get {
                 object obj = ResourceManager.GetObject("SeekPng.com_loading-png_189583", resourceCulture);

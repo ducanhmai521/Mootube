@@ -33,6 +33,7 @@
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2WinProgressIndicator1 = new Guna.UI2.WinForms.Guna2WinProgressIndicator();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -115,11 +116,24 @@
             this.guna2WinProgressIndicator1.Size = new System.Drawing.Size(90, 90);
             this.guna2WinProgressIndicator1.TabIndex = 13;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label3.Location = new System.Drawing.Point(3, 400);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(580, 17);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "NEW: Download videos on the go with MootubeTelegramBot! Get start here: @mootube_" +
+    "bot";
+            // 
             // homemain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(253)))), ((int)(((byte)(236)))));
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.guna2WinProgressIndicator1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2Button4);
@@ -140,5 +154,6 @@
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2WinProgressIndicator guna2WinProgressIndicator1;
+        private System.Windows.Forms.Label label3;
     }
 }

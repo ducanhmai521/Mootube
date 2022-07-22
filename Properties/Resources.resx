@@ -133,8 +133,8 @@
   <data name="done" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\done.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cont" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cont.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SeekPng.com_loading-png_189583" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SeekPng.com_loading-png_189583.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="homethun" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\homethun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,8 +142,8 @@
   <data name="setthun" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\setthun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SeekPng.com_loading-png_189583" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SeekPng.com_loading-png_189583.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cont" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cont.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="upthun" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upthun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -153,5 +153,8 @@
   </data>
   <data name="setfocus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\setfocus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mootube" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mootube.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

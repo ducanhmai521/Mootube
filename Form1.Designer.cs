@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mootube));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelContainer = new System.Windows.Forms.Panel();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -52,6 +52,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(114, 477);
             this.panel1.TabIndex = 0;
+            // 
+            // panelContainer
+            // 
+            this.panelContainer.Location = new System.Drawing.Point(120, 12);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(668, 426);
+            this.panelContainer.TabIndex = 5;
             // 
             // guna2Button4
             // 
@@ -148,21 +155,14 @@
             // 
             // guna2PictureBox1
             // 
-            this.guna2PictureBox1.Image = global::Mootube.Properties.Resources.moot;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(0, -6);
+            this.guna2PictureBox1.Image = global::Mootube.Properties.Resources.mootube;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(0, -17);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(114, 78);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(114, 116);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 1;
             this.guna2PictureBox1.TabStop = false;
-            // 
-            // panelContainer
-            // 
-            this.panelContainer.Location = new System.Drawing.Point(120, 12);
-            this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(668, 426);
-            this.panelContainer.TabIndex = 5;
             // 
             // Mootube
             // 
